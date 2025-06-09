@@ -23,6 +23,9 @@ func (stack *Stack[T]) Pop() (res T) {
 }
 
 func (stack *Stack[T]) Push(val T) {
-	stack.slice = append(stack.slice, val)
+	if stack.i+1 > 9 {
+		panic("Стек переполнен!")
+	}
 	stack.i++
+	stack.slice[stack.i] = val
 }
