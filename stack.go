@@ -12,7 +12,7 @@ func NewStack[T any]() Stack[T] {
 	}
 }
 
-func (stack *Stack[T]) pop() (res T) {
+func (stack *Stack[T]) Pop() (res T) {
 	if stack.i >= 0 {
 		res = stack.slice[stack.i]
 		stack.i--
@@ -22,7 +22,7 @@ func (stack *Stack[T]) pop() (res T) {
 	return
 }
 
-func (stack *Stack[T]) push(val T) {
+func (stack *Stack[T]) Push(val T) {
 	stack.slice = append(stack.slice, val)
 	stack.i++
 }
